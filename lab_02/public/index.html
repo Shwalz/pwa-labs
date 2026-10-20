@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <title>Powiadomienia</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/apple-icon-180.png" />
+    <link rel="icon" href="icons/favicon-196.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="notification.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Powiadomienia</h1>
+        <p>Notification API, service worker i Web Push</p>
+      </header>
+
+      <section class="card">
+        <h2>Uprawnienie</h2>
+        <p>Stan: <span id="permission" class="badge">?</span></p>
+        <div class="row">
+          <button id="enable" class="primary" type="button">Włącz powiadomienia</button>
+        </div>
+        <ul class="support" id="support">
+          <li id="sup-notification">Notification API</li>
+          <li id="sup-sw">Service worker</li>
+          <li id="sup-push">Web Push</li>
+          <li id="sup-standalone">Aplikacja zainstalowana</li>
+        </ul>
+        <p class="hint" id="hint"></p>
+      </section>
+
+      <section class="card">
+        <h2>Szybki test</h2>
+        <div class="row">
+          <button id="local" type="button">Ze strony</button>
+          <button id="sw" type="button">Z service workera</button>
+        </div>
+        <p class="status" id="test-status"></p>
+      </section>
+
+      <section class="card">
+        <h2>Własne powiadomienie</h2>
+        <form id="custom">
+          <p>
+            <label for="title">Tytuł</label>
+            <input id="title" name="title" type="text" required maxlength="60" placeholder="Nowa wiadomość" />
+          </p>
+          <p>
+            <label for="body">Treść</label>
+            <textarea id="body" name="body" rows="3" placeholder="Treść powiadomienia"></textarea>
+          </p>
+          <p>
+            <label for="icon">Ikona</label>
+            <select id="icon" name="icon">
+              <option value="android.png">Android</option>
+              <option value="alert.png">Uwaga (czerwona)</option>
+              <option value="info.png">Informacja (niebieska)</option>
+            </select>
+          </p>
+          <div class="row">
+            <button class="primary" type="submit">Pokaż powiadomienie</button>
+          </div>
+        </form>
+        <p class="status" id="form-status"></p>
+      </section>
+
+      <section class="card">
+        <h2>Web Push</h2>
+        <div class="row">
+          <button id="subscribe" class="primary" type="button">Subskrybuj</button>
+          <button id="unsubscribe" type="button">Anuluj subskrypcję</button>
+        </div>
+        <p>
+          <label for="subscription">Subskrypcja (skopiuj do pliku lab_02/subscription.json)</label>
+          <textarea id="subscription" rows="7" readonly placeholder="Brak subskrypcji"></textarea>
+        </p>
+        <div class="row">
+          <button id="copy" type="button">Kopiuj subskrypcję</button>
+        </div>
+        <p class="status" id="push-status"></p>
+      </section>
+    </main>
+  </body>
+</html>
