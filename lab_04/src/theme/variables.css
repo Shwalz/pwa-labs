@@ -1,0 +1,10 @@
+/* Ionic Variables and Theming
+ * Dokumentacja: https://ionicframework.com/docs/theming/
+ * Tutaj można nadpisać kolory motywu aplikacji.
+ */
+
+:root {
+  /* przykład: własny kolor akcentu
+  --ion-color-primary: #3880ff;
+  */
+}
