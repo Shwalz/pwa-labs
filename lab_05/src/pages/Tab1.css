@@ -1,0 +1,3 @@
+.lista-obrazkow ion-thumbnail img {
+  object-fit: cover;
+}
